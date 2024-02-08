@@ -6,6 +6,7 @@ package clases;
 
 import javax.swing.table.DefaultTableModel;
 
+
 /**
  *
  * @author usuario
@@ -24,6 +25,12 @@ public class Persona {
         this.edad = edad;
         this.nombre = nombre;
         this.id = id;
+    }
+
+    public Persona(int edad, String nombre) {
+        this.edad = edad;
+        this.nombre = nombre;
+
     }
 
     //metodo get devuelte el tipo de dato y la informacion que hay en el
@@ -54,7 +61,7 @@ public class Persona {
     }
 
     public String informacion() {
-        return "Datos de la persona:\n"
+        return "Informacion de la persona: \n"
                 + "Identificacion: " + getId() + "\n"
                 + "Nombre: " + getNombre() + "\n"
                 + "Edad: " + getEdad();
@@ -70,22 +77,22 @@ public class Persona {
 
     public DefaultTableModel InfoTabla() {
         DefaultTableModel modeloTabla = new DefaultTableModel();
-        String columnas[] = {
-            "Identificación",
+        String columnas []={
+            "Identificacion",
             "Nombre",
             "Edad",
-            "Es mayor de edad?"
-        };
+            "Es mayor de edad?"};
 
         modeloTabla.setColumnIdentifiers(columnas);
 
         Object fila[] = new Object[4];
-
+        
+        //Llenamos el vector filas
         fila[0] = getId();
         fila[1] = getNombre();
         fila[2] = getEdad();
         fila[3] = isMayorEdad();
-        
+        //----------------------------------
         modeloTabla.addRow(fila);
         return modeloTabla;
     }
