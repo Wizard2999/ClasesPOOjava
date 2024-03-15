@@ -33,9 +33,7 @@ public class VectorLetras {
 
     public char[] getLetras() {
         return letras;
-    }
-    
-    
+    }    
 
     public void setLetras(int pos, char letra) {
         this.letras[pos] = letra;
@@ -69,4 +67,5 @@ public class VectorLetras {
         //----------------------------------
         return modelo;
     }
+    
 }
